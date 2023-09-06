@@ -13,7 +13,7 @@ export default class MarkdownLinkSpaceEncoder extends Plugin {
 				let replacedSel: string = selection.replace(/\[[^\]]*\]\([^\)]*\)/g, (match: string): string => {
 					let split: RegExpMatchArray | null = match.match(/(\[.*\])(\(.*\))/);
 					if (split) {
-						return split[1] + split[2].replace(/ /g, '%20');
+						return split[1] + split[2].replace(/ /g, '-');
 					}
 
 					return match;
